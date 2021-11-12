@@ -1,14 +1,13 @@
 package com.dps.bookfinderapp.service;
 
 import java.util.List;
+import java.util.Set;
 
 
 public interface BookService<T> {
     List<T> findAllBooks();
 
-    List<T> findAllByTitle(String title);
-
-    List<T> findAllByAuthor( String author);
+    Set<T> findAllByTitleOrAuthor(String searchTerm);
 
     T save(T book);
 }
