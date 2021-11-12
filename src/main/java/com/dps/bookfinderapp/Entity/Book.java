@@ -1,23 +1,18 @@
 package com.dps.bookfinderapp.Entity;
 
 import org.springframework.format.annotation.DateTimeFormat;
-
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 import java.util.Date;
 
 @Entity
-@Table(name = "books")
+@Table(name ="books")
 public class Book extends BaseEntity {
     @DateTimeFormat(pattern = "yyyy-MM-dd")
-    @Column(name = "published_date")
     private Date publishedDate ;
 
-    @Column(name = "title")
     private String title;
 
-    @Column(name = "author")
     private String author;
 
     public Date getPublishedDate() {

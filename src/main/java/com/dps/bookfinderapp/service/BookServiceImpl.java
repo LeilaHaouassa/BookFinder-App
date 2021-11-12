@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 
@@ -17,8 +16,10 @@ public class BookServiceImpl implements BookService<Book> {
     private BookRepository bookRepository;
 
     @Override
-    public List<Book> findAllBooks() {
-        return bookRepository.findAll();
+    public Set<Book> findAllBooks() {
+        Set<Book> books = new HashSet<>();
+        bookRepository.findAll().forEach(books::add);
+        return books;
     }
 
     @Override
