@@ -6,19 +6,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Objects;
-import java.util.Set;
+
 
 @Service
 public class BookServiceImpl implements BookService<Book> {
 
     @Autowired
-    private final BookRepository bookRepository;
-
-    public BookServiceImpl(BookRepository bookRepository) {
-        this.bookRepository = bookRepository;
-    }
-
+    private BookRepository bookRepository;
 
     @Override
     public List<Book> findAllBooks() {
